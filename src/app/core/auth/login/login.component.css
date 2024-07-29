@@ -1,0 +1,28 @@
+.form-group {
+    margin-bottom: 20px
+}
+
+
+.place {
+    width: 100px;
+    height: 100px;
+    padding-left: 340px;
+    justify-content: left;
+    
+}
+
+.card {
+    border: none;
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(193, 233, 192);
+}
+
+.card h1,h6 {
+    color: darkgreen;
+
+}

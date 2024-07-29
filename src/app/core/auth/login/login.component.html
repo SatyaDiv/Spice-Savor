@@ -1,0 +1,33 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="card">
+        <div class="text-center">
+            <h1>Login</h1>
+            <h6>Please enter your Email and Password</h6>
+        </div>
+        <div class="mb-3">
+            <label for="Name" class="form-label">Email Id</label>
+            <input type="text" class="form-control" autocomplete="off" name="email" formControlName="email"
+                placeholder="Enter Your Eamil">
+            <span class="text-danger"
+                *ngIf="myForm.controls['email'].dirty && myForm.hasError('required', 'email')">*Email Id is
+                Required</span>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" autocomplete="off" name="password" formControlName="password"
+                placeholder="Password">
+            <span class="text-danger"
+                *ngIf="myForm.controls['password'].dirty && myForm.hasError('required', 'password')">*Password is
+                Required</span>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">Login</button>
+        </div>
+        <a style="color: rgb(9, 184, 88);" routerLink="/signup">New User? Click here to Signup</a>
+    </div>
+</form>
+
+
+<!-- <ul>
+    {{myData?.userName}}
+</ul> -->

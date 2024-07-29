@@ -1,0 +1,18 @@
+{
+  "signUpUsers": [
+    {
+      "id": "1052",
+      "fullname": "Satya Sai Praneeth",
+      "email": "satya@gmail.com",
+      "password": "11111111",
+      "mobilenumber": "8555004455"
+    },
+    {
+      "id": "5343",
+      "fullname": "Satya Sai Praneeth",
+      "email": "satya@gmail.com",
+      "password": "11111111",
+      "mobilenumber": "8555004455"
+    }
+  ]
+}

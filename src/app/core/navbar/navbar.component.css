@@ -1,0 +1,19 @@
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  height: 15px;
+  
+}
+
+.logo {
+  padding-left: 2px;
+}
+
+
+
+
+
+.custom-navbar {
+  background-color: #b3e9b1;
+}
