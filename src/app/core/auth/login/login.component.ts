@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private builder: FormBuilder,
     private authService: AuthService,
-    private router:Router,
-    private http:HttpClient) { }
+    private router: Router,
+    private http: HttpClient) { }
 
   ngOnInit(): void {
     this.myForm = this.builder.group({
@@ -28,20 +28,26 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     this.http.get<any>("http://localhost:3000/signUpUsers")
-    .subscribe(response => {
-      const user = response.find((a: any) => {
-        return a.email === this.myForm.value.email && a.password === this.myForm.value.password
-      });
-      if (user) {
-        alert("Login Success");
-        this.myForm.reset();
-        this.router.navigate(['/home'])
-      } else {
-        alert("User not found")
-      }
-    }, error => {
-      alert("Something went wrong from api..")
-    })
+      .subscribe(response => {
+        const user = response.find((a: any) => {
+          return a.email === this.myForm.value.email && a.password === this.myForm.value.password
+        });
+        if (user) {
+          const email = this.myForm.get('email')?.value;
+          const password = this.myForm.get('password')?.value;
+          localStorage.setItem('email', email);
+          localStorage.setItem('pass', password)
+          // alert("Login Success");
+          this.myForm.reset();
+          this.router.navigate(['/home'])
+        } else {
+          alert("User not found")
+          this.myForm.reset()
+        }
+      }, error => {
+        alert("Something went wrong from api..")
+
+      })
 
     // if (this.myForm.valid) {
     //   const email = this.myForm.get('email')?.value;
@@ -50,7 +56,7 @@ export class LoginComponent implements OnInit {
     //   localStorage.setItem('pass',password)
     //   console.log(this.myForm.value);
     //   this.authService.login();
-    //   this.router.navigate(['/home'])
+    // //   this.router.navigate(['/home'])
     // }
   }
 

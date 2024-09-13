@@ -1,0 +1,116 @@
+<div class="form-background p-3">
+
+  <div>
+    <button type="button" class="btn btn-outline-dark goBack" (click)="goBack()">Back</button>
+  </div>
+  <div class="container">
+    <h1 class="mt-3" style="font-style: italic; color: darkred; font-weight: bold;">New Recipe...</h1>
+    <form [formGroup]="addrecipeform" (ngSubmit)="postRecipeData()">
+      
+
+      <div class="mt-2">
+        <!-- Title -->
+        <div class="mt-3">
+          <label class="form-label">Title</label>
+          <input type="text" id="recipeTitle" autocomplete="off" class="form-control custom-input" formControlName="title">
+        </div>
+
+        <!-- Cooking Time -->
+        <div class="mt-3">
+          <label class="form-label">Cooking Time</label>
+          <select id="cookingTime" class="form-control custom-input2" formControlName="cookingTime">
+            <option value="20 minutes">20 minutes</option>
+            <option value="1/2 hour">1/2 hour</option>
+            <option value="45 minutes">45 minutes</option>
+            <option value="1 hour">1 hour</option>
+            <option value="2 hours">2 hours</option>
+          </select>
+        </div>
+
+        <!-- Summary -->
+        <div class="mt-3">
+          <label class="form-label">Summary</label>
+          <div class="col-6 p-2">
+          <textarea id="summary" class="form-control custom-input3" formControlName="summary"></textarea>
+        </div>
+        </div>
+
+        <!-- Level -->
+        <div class="mt-3">
+          <label class="form-label">Level</label>
+          <div class="btn-group mx-3 toggle-button-group" role="group">
+            <input type="radio" class="btn-check" id="btnradio1" value="Easy" formControlName="level">
+            <label class="toggle-button" for="btnradio1">Easy</label>
+
+            <input type="radio" class="btn-check" id="btnradio2" value="Medium" formControlName="level">
+            <label class="toggle-button" for="btnradio2">Medium</label>
+
+            <input type="radio" class="btn-check" id="btnradio3" value="Hard" formControlName="level">
+            <label class="toggle-button" for="btnradio3">Hard</label>
+          </div>
+        </div>
+
+        <!-- Category -->
+        <div class="mt-3">
+          <label class="form-label">Category</label>
+          <div class="toggle-button-group mx-3">
+            <input type="radio" id="veg" name="category" value="Veg" class="btn-check" formControlName="category">
+            <label for="veg" class="toggle-button">Veg</label>
+
+            <input type="radio" id="nonveg" name="category" value="Non-Veg" class="btn-check" formControlName="category">
+            <label for="nonveg" class="toggle-button">Non-Veg</label>
+          </div>
+        </div>
+
+        <!-- Upload Image -->
+        <div class="mt-3">
+          <label for="formFile" class="form-label">Upload Image</label>
+          <input class="form-control custom-input6" type="file" id="formFile" (change)="saveImages($event)">
+          <div class="preview mt-2" *ngIf="uploads.length > 0">
+            <div *ngFor="let url of uploads; let i = index" class="imagestyle border mb-4">
+              <button class="btn btn-outline-danger" (click)="removeImage(i)">❌</button>
+              <img [src]="url" alt="Image preview">
+            </div>
+          </div>
+        </div>
+
+        <!-- Author -->
+        <div class="mt-3">
+          <label for="author" class="form-label">Author</label>
+          <div class="col-6 p-2">
+          <input type="text" id="author" autocomplete="off" class="form-control custom-input " formControlName="author">
+        </div>
+        </div>
+
+        <!-- Ingredients -->
+        <div class="mt-3">
+          <label for="ingredients" class="form-label">Ingredients</label>
+          <div class="col-6 p-2">
+          <textarea id="ingredients" class="form-control custom-input4" formControlName="ingredients"></textarea>
+        </div>
+        </div>
+
+        <!-- Steps -->
+        <div class="mt-3">
+          <label for="steps" class="form-label">Steps</label>
+          <div formArrayName="steps" class="d-flex flex-column">
+            <div *ngFor="let step of steps.controls; let i = index" class="d-flex align-items-center mb-2">
+              <span class="step-number me-2" style="font-weight: bold;">Step{{ i + 1 }}.</span>
+              <textarea id="step{{i}}" class="form-control custom-input5" [formControlName]="i"></textarea>
+              <button type="button" class="btn btn-outline-danger ms-2" (click)="removeStep(i)">−</button>
+              <button type="button" class="btn btn-outline-success ms-2" (click)="addStep()">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="d-grid gap-2 mb-3">
+          <button type="submit" class="btn btn-outline-primary">Upload New Recipe</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+

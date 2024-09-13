@@ -1,19 +1,209 @@
-.navbar-brand {
+/* .custom-navbar {
+  background-color: rgb(231, 218, 186);
   display: flex;
   align-items: center;
-  vertical-align: middle;
-  height: 15px;
-  
-}
-
-.logo {
-  padding-left: 2px;
-}
-
-
-
-
+  justify-content: space-between;
+  padding: 0px 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1050;
+  border-radius: 10px;
+} */
 
 .custom-navbar {
-  background-color: #b3e9b1;
+  background-color: rgb(231, 218, 186);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1050;
+  border-radius: 10px;
+  border: 1px solid rgb(181, 189, 181);
+
+}
+
+/* .modal {
+  z-index: 1030 !important;
+}
+.modal-backdrop {
+  z-index: 1040 !important;
+} */
+
+/* ::ng-deep .modal-backdrop.show {
+  opacity: 0;
+} */
+
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; /* Ensure it's on top of other content */
+  color: darkred;
+}
+
+.navbar-content {
+  flex: 1;
+  text-align: left;
+}
+
+.navbar-content h1 {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.tagline {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.homeicon, .personicon {
+  font-size: 3rem; /* Adjust the size of the icons */
+  margin-left: 40px; /* Space between icons if needed */
+  cursor: pointer;
+}
+
+.logout-container i {
+  font-size: 3rem; /* Adjust icon size if needed */
+  color: darkred; /* Adjust icon color */
+  margin-bottom: -10px;
+  cursor: pointer;
+}
+
+.logout-container p.logout-text {
+  margin: 0;
+  font-size: 1rem; /* Adjust the size of the text */
+  color: darkred; /* Match the color with the icon */
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+}
+
+.custom-input {
+  width: 400px; /* Adjust this width as needed */
+  height: 40px; /* Adjust the height if needed */
+  font-size: 16px; /* Adjust the font size as needed */
+  border-radius: 20px; /* Rounded corners */
+  padding: 10px; /* Optional: Adjust padding to control input size */
+  border: 1px solid #ccc; /* Optional: Add a border with a light color */
+  outline: none; /* Optional: Remove the outline when the input is focused */
+}
+
+.custom-input:focus {
+  border-color: darkred; /* Optional: Change border color on focus */
+  box-shadow:1px 1px 10px 1px  rgba(255, 102, 102, 0.5); /* Optional: Add shadow on focus */
+}
+
+.custom-button1 {
+  border-radius: 20px; /* Rounded corners for the button */
+  font-size: 1.3rem;
+  font-style: italic;
+  border: 1px solid #28a745; /* Match the border color with the button color */
+  color: white; /* Text color */
+  background-color: darkred; /* Button background color */
+}
+
+.custom-button1:hover {
+  background-color: darkred; /* Background color on hover */
+  color: #28a745; /* Text color on hover */
+}
+
+.custom-button2 {
+  border-radius: 20px; /* Rounded corners for the button */
+  padding: 8px 20px; /* Adjust padding for button size */
+  border: 1px solid #28a745; /* Match the border color with the button color */
+  color: #28a745; /* Text color */
+  background-color: white; /* Button background color */
+  transition: background-color 3s ease; /* Smooth transition for hover effect */
+  font-style: italic;
+}
+
+.custom-button2:hover {
+  background-color: #28a745; /* Background color on hover */
+  color: white; /* Text color on hover */
+}
+
+.card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); /* Adjust the minmax value as needed */
+  gap: 1px; /* Space between cards */
+  margin-top: 100px;
+}
+
+.card-container {
+  margin-top: 1%; /* Remove extra margin from container */
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.card {
+  width: 100%; /* Full width within the container */
+  height: 430px; /* Set a fixed height for the card */
+  display: flex; /* Enable Flexbox */
+  flex-direction: column; /* Arrange items in a column */
+  justify-content: space-between; /* Space out content vertically */
+  border: 5px solid rgb(181, 189, 181); /* Adds a border to the card */
+  border-radius: 20px; /* Rounded corners for the card */
+  overflow: hidden; /* Ensures child elements, like images, are clipped to fit within the rounded corners */
+}
+
+.card-img-top {
+  max-height: 170px; /* Set max height for the image */
+  object-fit: cover; /* Cover the card with the image */
+  width: 100%; /* Full width for the image */
+}
+
+.card-body {
+  display: flex; /* Enable Flexbox */
+  flex-direction: column; /* Arrange text in a column */
+  justify-content: space-between; /* Space out content vertically, so the button is at the bottom */
+  align-items: flex-start; /* Align text to the left */
+  padding: 15px; /* Add more padding for better spacing */
+  text-align: left; /* Ensure text is left-aligned */
+  flex-grow: 1; /* Allow the card body to grow and fill the available space */
+  background-color: rgb(231, 218, 186);
+}
+
+.card-title {
+  margin-bottom: 10px; /* Add margin to the title */
+  font-style: italic;
+  color: darkred;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.card-text {
+  margin-bottom: 1px; /* Add margin to separate text from the button */
+  color: darkslategray;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bolder;
+}
+
+.recipe-card {
+  transition: transform 0.2s ease, box-shadow 0.5s ease;
+}
+
+.recipe-card:hover {
+  transform: scale(1.02); /* Adjusted scale for a bigger effect */
+  z-index: 1; /* Ensures the card is above others */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7); /* Increased shadow for more depth */
+}
+
+
+
+.custom-button3 {
+  background-color: darkred; /* Custom dark red color */
+  color: white; /* Text color */
+  margin-top: auto; /* Push the button to the bottom of the card body */
+  font-style: italic;
+  border-radius: 10px;
+  border: 3px solid rgb(181, 189, 181);
 }

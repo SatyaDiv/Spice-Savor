@@ -1,33 +1,35 @@
-<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-    <div class="card">
+<div>
+    <img src="./assets/images/loginimage.png" style="width: 100vw; height: 100vh;">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="card" >
         <div class="text-center">
             <h1>Login</h1>
-            <h6>Please enter your Email and Password</h6>
+            <h4>Welcome back,</h4>
+            <h5>Please enter your Email and Password</h5>
         </div>
-        <div class="mb-3">
-            <label for="Name" class="form-label">Email Id</label>
+        <div class="mb-3 input-group">
+            <span class="input-group-text"><i class="fas fa-user"></i></span>
             <input type="text" class="form-control" autocomplete="off" name="email" formControlName="email"
-                placeholder="Enter Your Eamil">
+            placeholder="Enter Your Email">
             <span class="text-danger"
-                *ngIf="myForm.controls['email'].dirty && myForm.hasError('required', 'email')">*Email Id is
-                Required</span>
+            *ngIf="myForm.controls['email'].dirty && myForm.hasError('required', 'email')">*Email Id is
+            Required</span>
         </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
+        <div class="mb-3 input-group ">
+            <span class="input-group-text"><i class="fas fa-lock"></i></span>
             <input type="password" class="form-control" autocomplete="off" name="password" formControlName="password"
-                placeholder="Password">
+            placeholder="Enter your Password">
             <span class="text-danger"
-                *ngIf="myForm.controls['password'].dirty && myForm.hasError('required', 'password')">*Password is
-                Required</span>
+            *ngIf="myForm.controls['password'].dirty && myForm.hasError('required', 'password')">*Password is
+            Required</span>
         </div>
-        <div class="mb-3">
-            <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">Login</button>
+        <div class="mb-3 d-flex justify-content-center">
+            <button type="submit" class="btn btn-success btn-custom-lg" [disabled]="!myForm.valid">Sign In</button>
         </div>
-        <a style="color: rgb(9, 184, 88);" routerLink="/signup">New User? Click here to Signup</a>
+        <a style="color: gold; font-weight: bold;" routerLink="/signup">New User? Click here to Signup</a>
     </div>
 </form>
-
-<h1>Login</h1>
+</div>
 
 <!-- <ul>
     {{myData?.userName}}

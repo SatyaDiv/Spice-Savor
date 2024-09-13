@@ -1,13 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private isAuthenticated = false;
+  private isAuthenticated = true;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,
+    private http: HttpClient
+  ) { }
 
   login() {
     this.isAuthenticated = true;
@@ -20,7 +24,11 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
 
-  isLoggedIn(): boolean {
-    return this.isAuthenticated;
+
+  postRecipe(data: any): Observable<any> {
+    return this.http.post<any>(`http://localhost:3000/recipesData`, data)
+      .pipe(map((response) => {
+        return response;
+      }));
   }
 }

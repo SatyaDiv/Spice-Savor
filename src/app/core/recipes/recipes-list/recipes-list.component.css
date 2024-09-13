@@ -1,0 +1,61 @@
+.card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); /* Adjust the minmax value as needed */
+  gap: 15px; /* Space between cards */
+}
+
+.card-container {
+  margin-top: 2%; /* Remove extra margin from container */
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.card {
+  width: 100%; /* Full width within the container */
+  height: 380px; /* Set a fixed height for the card */
+  display: flex; /* Enable Flexbox */
+  flex-direction: column; /* Arrange items in a column */
+  justify-content: space-between; /* Space out content vertically */
+  border: 5px solid #bbbbbb; /* Adds a border to the card */
+  border-radius: 20px; /* Rounded corners for the card */
+  overflow: hidden; /* Ensures child elements, like images, are clipped to fit within the rounded corners */
+}
+
+.ucard-body {
+  flex: 1; /* Allow the card body to grow */
+  flex-direction: column; /* Arrange text in a column */
+  justify-content: left; /* Align text vertically to the left */
+  align-items: left; /* Align text horizontally to the left */
+  padding: 10px; /* Add padding inside the card */
+}
+
+.card-img-top {
+  max-height: 150px; /* Set max height for the image */
+  object-fit: cover; /* Cover the card with the image */
+  width: 100%; /* Full width for the image */
+  /* border-radius: 20px 20px 0 0; Same border radius as the card for the top corners */
+}
+
+
+.card-body {
+  flex: 1; /* Allow the card body to grow */
+  display: flex; /* Enable Flexbox */
+  flex-direction: column; /* Arrange text in a column */
+  justify-content: flex-start; /* Align content to the top */
+  align-items: flex-start; /* Align text to the left */
+  padding: 15px; /* Add more padding for better spacing */
+  text-align: left; /* Ensure text is left-aligned */
+}
+
+.card-title {
+  margin-bottom: 10px; /* Add margin to the title */
+}
+
+.card-text {
+  margin-bottom: 15px; /* Add margin to separate text from the button */
+}
+
+.btn {
+  align-self: flex-start; /* Align the button to the left */
+}
+

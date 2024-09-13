@@ -3,26 +3,39 @@
 }
 
 
-.place {
-    width: 100px;
-    height: 100px;
-    padding-left: 340px;
-    justify-content: left;
-    
-}
+
 
 .card {
     border: none;
     width: 500px;
     padding: 40px;
     position: absolute;
+    right: 10%;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgb(193, 233, 192);
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
 }
 
-.card h1,h6 {
-    color: darkgreen;
+.card h1 {
+    color: gainsboro;
+    font-weight: bold;
+    font-style: italic;
+    text-align: left;
 
+}
+
+.card h5,h4 {
+    text-align: left;
+    color: gainsboro
+}
+
+.input-group-text {
+    background-color: lightgray;
+    border: none;
+}
+
+.btn-custom-lg {
+    font-size: 1.0rem;
+    padding: 4px 50px;
+    border-radius: 30px;
 }
