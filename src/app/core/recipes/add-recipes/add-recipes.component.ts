@@ -27,7 +27,7 @@ export class AddRecipesComponent implements OnInit {
       summary: ['', Validators.required],
       level: ['', Validators.required],
       category: ['', Validators.required],
-      image: [''],
+      image: ['',Validators.required],
       author: ['', Validators.required],
       ingredients: ['', Validators.required],
       steps: this.formbuilder.array([this.createStepField()])
@@ -63,7 +63,6 @@ export class AddRecipesComponent implements OnInit {
       this.recipeModelObj.image = this.uploads; // Updated to use uploads array
       this.recipeModelObj.author = this.addrecipeform.value.author;
       this.recipeModelObj.ingredients = this.addrecipeform.value.ingredients;
-
       // Corrected to extract the values from the steps FormArray
       this.recipeModelObj.steps = this.addrecipeform.value.steps;
       this.authService.postRecipe(this.recipeModelObj).subscribe(

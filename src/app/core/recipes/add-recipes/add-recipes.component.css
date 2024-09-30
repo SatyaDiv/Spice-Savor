@@ -168,19 +168,22 @@
     border-radius: 20px;
     overflow: hidden;
     border: 2px solid darkred;
+    max-width: 300px; /* Adjust the max width as needed */
+    margin: 0 auto; /* Center the buttons if desired */
 }
 
 .toggle-button {
     display: block;
     padding: 10px 15px;
     font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
     color: darkred;
     background-color: #f8ebe5;
     cursor: pointer;
     flex: 1;
     text-align: center;
-    transition: background-color 0.3s, color 0.3s;
-    max-width: 120px;
+    transition: background-color 0.4s, color 0.3s;
 }
 
 .btn-check:checked + .toggle-button {
@@ -190,4 +193,22 @@
 
 .toggle-button:not(:first-child) {
     border-left: 1px solid darkred;
+}
+
+
+.upload-button {
+    border-radius: 20px; /* Rounded corners for the button */
+    border: 1px solid darkred; /* Match the border color with the button color */
+    color: darkred; /* Text color */
+    background-color: rgb(252, 234, 234); /* Button background color */
+    transition: background-color 1s ease; /* Smooth transition for hover effect */
+    font-style: italic;
+    font-weight: bold;
+
+    
+}
+
+.upload-button:hover {
+    background-color: darkred; /* Background color on hover */
+  color: white; /* Text color on hover */
 }

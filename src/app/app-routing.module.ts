@@ -26,7 +26,7 @@ const routes: Routes = [
     path: 'home/add-recipes/recipes-lists', component:RecipesListComponent,canActivate:[AuthGuard]
   },
   {
-    path: 'recipes-search/:id', component: RecipesSearchComponent,
+    path: 'recipes-search/:id', component: RecipesSearchComponent, canActivate:[AuthGuard]
   }
   
 

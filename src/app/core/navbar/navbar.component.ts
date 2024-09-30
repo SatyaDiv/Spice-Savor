@@ -1,10 +1,10 @@
-import { HttpBackend, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from 'src/app/auth.service';
-import { ReceipeModalComponent } from '../modal/receipe-modal/receipe-modal.component';
+import { ReceipeModalComponent } from '../auth/receipe-modal/receipe-modal.component';
 // import { ReceipeModalComponent } from '../modal/receipe-modal/receipe-modal.component';
 
 @Component({
@@ -33,7 +33,7 @@ export class NavbarComponent implements OnInit {
  
   getRecipeData() {
     this.http.get<any>(`http://localhost:3000/recipesData`).subscribe((res: any) => {
-      console.log(res, "response");
+      // console.log(res, "response");
       this.myData = res;
       this.filteredRecipes = this.myData;
       this.loader = false;
@@ -62,10 +62,8 @@ export class NavbarComponent implements OnInit {
 
   }
 
-  public user = {
-    name: 'Izzat Nadiri',
-    age: 26
-  }
+  public user = {  }
+  
   receipModal(){
       const modalRef = this.modalService.open(ReceipeModalComponent);
       modalRef.componentInstance.user = this.user;

@@ -8,8 +8,11 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ReceipeModalComponent implements OnInit {
   activeModal = inject(NgbActiveModal);
+  
 ngOnInit(): void {
   
 }
-
+ constructor() {
+   
+ }
 }

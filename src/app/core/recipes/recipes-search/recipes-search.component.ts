@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class RecipesSearchComponent implements OnInit {
   myData: any = [];
   selectedRecipe: any;
-  filteredRecipes: any[] = [];
+  filteredRecipes: any;
 
   constructor(
     private http: HttpClient,
@@ -24,7 +24,7 @@ export class RecipesSearchComponent implements OnInit {
 
   getRecipeData() {
     this.http.get<any>('http://localhost:3000/recipesData').subscribe((res: any) => {
-      console.log(res, "response");
+      // console.log(res, "response");
       this.myData = res;
       this.filteredRecipes = this.myData;
 

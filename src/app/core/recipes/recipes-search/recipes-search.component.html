@@ -52,6 +52,14 @@
         <button class="btn btn-outline-dark back-button" (click)="goToHome()">Back</button>
     </div>
     <div class="card">
+
+        <div *ngIf="selectedRecipe.image && selectedRecipe.image.length">
+            <h5 class="mt-3" style="font-style: italic;color: darkred; font-weight: bold;">Picture of the Recipe:</h5>
+            <div *ngFor="let img of selectedRecipe.image">
+                <img [src]="img" alt="Recipe Image"
+                    style="width: 100%; max-width: 900px; height: 7%; margin-bottom: 10px;">
+            </div>
+        </div>
         <div>
             <h5>Title:</h5>
             <ul *ngFor="let title of selectedRecipe.title">
@@ -106,15 +114,6 @@
             <ul *ngFor="let step of selectedRecipe.steps; let i = index">
                 <strong>Step {{i + 1}}:</strong> {{step}}
             </ul>
-        </div>
-
-        <!-- Display images if available -->
-        <div *ngIf="selectedRecipe.image && selectedRecipe.image.length">
-            <h5 class="mt-3" style="font-style: italic;color: darkred; font-weight: bold;">Picture of the Recipe:</h5>
-            <div *ngFor="let img of selectedRecipe.image">
-                <img [src]="img" alt="Recipe Image"
-                    style="width: 100%; max-width: 300px; height: auto; margin-bottom: 10px;">
-            </div>
         </div>
 
 
