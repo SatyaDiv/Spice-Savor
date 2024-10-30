@@ -31,7 +31,7 @@ export class SignupComponent implements OnInit {
   signUp() {
     this.http.post<any>(`http://localhost:3000/signUpUsers`,this.signupForm.value)
     .subscribe(response => {
-      alert("Signup Successfully");
+      alert("Your account was successfully registered");
       this.signupForm.reset();
       this.router.navigate(['login']);
       

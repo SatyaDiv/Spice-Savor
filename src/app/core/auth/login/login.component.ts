@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.http.get<any>("http://localhost:3000/signUpUsers")
+    this.http.get<any>(`http://localhost:3000/signUpUsers`)
       .subscribe(response => {
         const user = response.find((a: any) => {
           return a.email === this.myForm.value.email && a.password === this.myForm.value.password

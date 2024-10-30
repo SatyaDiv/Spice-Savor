@@ -5,31 +5,31 @@ import { LoginComponent } from './core/auth/login/login.component';
 import { AuthGuard } from './cactivate.guard';
 import { SignupComponent } from './core/auth/signup/signup.component';
 import { AddRecipesComponent } from './core/recipes/add-recipes/add-recipes.component';
-import { RecipesListComponent } from './core/recipes/recipes-list/recipes-list.component';
 import { RecipesSearchComponent } from './core/recipes/recipes-search/recipes-search.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
+
   {
-    path: 'login', component: LoginComponent,
+    path: 'login', loadChildren:() => import('./core/auth/login/login.module').then (m=> m.LoginModule) 
   },
+
   {
-    path: 'signup', component:SignupComponent
+    path: 'signup', loadChildren:() => import('./core/auth/signup/signup.module').then (m => m.SignupModule)
   },
+
   {
-    path: 'home', component: NavbarComponent,canActivate:[AuthGuard]
+    path: 'home', loadChildren:() => import('./core/navbar/navbar.module').then (m => m.NavbarModule) ,canActivate:[AuthGuard]
   },
+
   {
-    path: 'home/add-recipes', component: AddRecipesComponent,canActivate:[AuthGuard]
+    path: 'home/add-recipes', loadChildren:() => import('./core/recipes/add-recipes/add-recipes.module').then (m => m.AddRecipesModule),canActivate:[AuthGuard]
   },
+
   {
-    path: 'home/add-recipes/recipes-lists', component:RecipesListComponent,canActivate:[AuthGuard]
-  },
-  {
-    path: 'recipes-search/:id', component: RecipesSearchComponent, canActivate:[AuthGuard]
+    path: 'recipes-search/:id', loadChildren:() => import('./core/recipes/recipes-search/recipes-search.module').then (m =>m.RecipesSearchModule), canActivate:[AuthGuard]
   }
   
-
 ];
 
 @NgModule({
