@@ -1,10 +1,22 @@
 <div class="modal-header">
     <h4 class="modal-title">Profile Details!</h4>
-    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.close('Cross click')"></button>
 </div>
 <div class="modal-body">
-    <p>Hello</p>
-</div>
-<div class="modal-footer">
-    <button type="button" class="btn btn-outline-secondary" (click)="activeModal.close('Close click')">Close</button>
+    <div #subProfileWrap class="sub-profile-wrap">
+        <div class="sub-profile">
+            <div class="user-info">
+                <div class="user-avatar-large">
+                    <span class="avatar-initials-large">{{ userInitials }}</span>
+                </div>
+                <h3>{{ userName }}</h3>
+                <p class="user-email">{{ emailId }}</p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" (click)="activeModal.close('Close click')">
+                Close
+            </button>
+        </div>
+    </div>
 </div>

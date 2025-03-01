@@ -1,0 +1,89 @@
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(231, 218, 186);
+  padding: 15px;
+  border-bottom: 1px solid #4a4c4e;
+}
+
+.modal-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: darkred;
+}
+
+.modal-body {
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(231, 218, 186);
+}
+
+.sub-profile-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.user-avatar-large {
+  width: 80px;
+  height: 80px;
+  background-color: darkred;
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px #e5e7eb;
+}
+
+.avatar-initials-large {
+  color: white;
+  /* font-weight: 600; */
+  /* font-size: 2rem; */
+  text-transform: uppercase;
+}
+
+h3 {
+  margin: 5px 0;
+  font-size: 18px;
+  color: darkred;
+}
+
+.user-email {
+  font-size: 14px;
+  color: darkslategray;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  border-top: 1px solid #4a4c4e;
+}
+
+.btn-outline-secondary {
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #6c757d;
+  color: #fff;
+}

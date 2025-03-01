@@ -11,6 +11,8 @@ export class RecipesSearchComponent implements OnInit {
   myData: any = [];
   selectedRecipe: any;
   filteredRecipes: any;
+  loader:boolean = true;
+
 
   constructor(
     private http: HttpClient,
@@ -27,6 +29,7 @@ export class RecipesSearchComponent implements OnInit {
       // console.log(res, "response");
       this.myData = res;
       this.filteredRecipes = this.myData;
+      this.loader = false;
 
       // Get the ID from the route parameter
       const recipeId = this.activatedRoute.snapshot.paramMap.get('id');

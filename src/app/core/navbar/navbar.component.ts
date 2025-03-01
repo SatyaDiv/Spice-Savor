@@ -69,7 +69,7 @@ export class NavbarComponent implements OnInit {
       modalRef.componentInstance.user = this.user;
       modalRef.result.then((result) => {
         if (result) {
-          console.log(result);
+          // console.log(result);
         }
       });
   }

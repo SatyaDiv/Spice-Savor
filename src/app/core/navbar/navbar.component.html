@@ -1,9 +1,10 @@
 <nav class="navbar navbar-light custom-navbar">
-  <div>
-    <img style="height: 100px; width: 100px;" src="assets/images/logo2.jpg">
+  <div style="width: 80px; height: 80px; overflow: hidden; border-radius: 50%; position: relative;">
+    <img style="height: 100px; width: 100px; position: absolute;  top: -10px; left: -10px;"
+      src="assets/images/spicesavour.svg">
   </div>
   <div class="navbar-content">
-    <h1 style="color: darkred;">Spice Savor</h1>
+    <h1 style="color: rgb(139, 0, 0);">Spice Savor</h1>
     <p class="tagline" style="color: darkslategray;">Spice Up Your Recipe Savor The Results</p>
   </div>
   <div>
@@ -16,7 +17,7 @@
       <i class="bi bi-house-fill"></i>
     </a>
   </div>
-  
+
   <div>
     <!-- data-bs-toggle="modal" data-bs-target="#staticBackdrop" -->
     <a class="personicon" style="color: darkred;" (click)="receipModal()">
@@ -25,9 +26,9 @@
     <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
       Modal
     </button> -->
-    
+
   </div>
-  
+
   <!-- Modal -->
   <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-xm">
@@ -42,16 +43,17 @@
       </div>
     </div>  
   </div> -->
-  
+
 
   <div style="margin-right: 20px;">
     <form class="d-flex" role="search" (submit)="searchRecipes()">
-      <input class="form-control mx-2 custom-input" type="search" placeholder="Search Recipe..." aria-label="Search" [(ngModel)]="searchQuery" name="searchQuery">
+      <input class="form-control mx-2 custom-input" type="search" placeholder="Search Recipe..." aria-label="Search"
+        [(ngModel)]="searchQuery" name="searchQuery">
       <button class="btn btn-success custom-button2" type="submit">Search</button>
     </form>
-</div>  
+  </div>
 
-    
+
   <div class="logout-container d-flex flex-column align-items-center">
     <i class="bi bi-box-arrow-right logout" (click)="logout()"></i>
     <p class="logout-text">LogOut</p>
@@ -59,15 +61,17 @@
 
 </nav>
 
-<div class="card-wrapper">
-  <div *ngFor="let data of filteredRecipes" class="card-container">
-    <div class="card recipe-card">
-      <img [src]="data.image" class="card-img-top" alt="{{data.title}}">
-      <div class="card-body">
-        <h5 class="card-title  placeholder-glow">{{data.title}}</h5>
-        <p class="card-text">{{data.summary}}</p>
-        <!-- <a class="btn btn-primary" (click)="readMore()">Read More</a> -->
-        <button type="button" class="btn custom-button3" (click)="readMore(data.id)">Read More>>></button>
+<div class="content-container">
+  <div class="card-wrapper">
+    <div *ngFor="let data of filteredRecipes" class="card-container">
+      <div class="card recipe-card">
+        <img [src]="data.image" class="card-img-top" alt="{{data.title}}">
+        <div class="card-body">
+          <h5 class="card-title  placeholder-glow">{{data.title}}</h5>
+          <p class="card-text">{{data.summary}}</p>
+          <!-- <a class="btn btn-primary" (click)="readMore()">Read More</a> -->
+          <button type="button" class="btn custom-button3" (click)="readMore(data.id)">Read More>>></button>
+        </div>
       </div>
     </div>
   </div>
