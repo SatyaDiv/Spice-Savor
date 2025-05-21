@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
   myData: any;
   searchQuery: string = '';
   filteredRecipes: any;
-  loader:boolean = true;
+  isLoading:boolean = true;
 
 
 
@@ -36,13 +36,17 @@ export class NavbarComponent implements OnInit {
       // console.log(res, "response");
       this.myData = res;
       this.filteredRecipes = this.myData;
-      this.loader = false;
+      this.isLoading = false;
     },error =>{
-      this.loader = false;
+      this.isLoading = false;
     })
   }
   readMore(recipeId: string){
-    this.router.navigate(['recipes-search', recipeId]);
+    this.router.navigate(['recipes-detail', recipeId]);
+  }
+
+  editRecipe(id:string) {
+    this.router.navigate(['recipe-edit',id])
   }
 
   logout() {

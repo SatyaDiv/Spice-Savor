@@ -8,10 +8,12 @@
     <p class="tagline" style="color: darkslategray;">Spice Up Your Recipe Savor The Results</p>
   </div>
   <div>
+
     <button type="button" class="btn custom-button1" [routerLink]="['/home/add-recipes']">
       Add Recipe
     </button>
   </div>
+
   <div>
     <a class="homeicon" href="home" style="color: darkred;">
       <i class="bi bi-house-fill"></i>
@@ -19,31 +21,10 @@
   </div>
 
   <div>
-    <!-- data-bs-toggle="modal" data-bs-target="#staticBackdrop" -->
     <a class="personicon" style="color: darkred;" (click)="receipModal()">
       <i class="bi bi-person-fill"></i>
     </a>
-    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-      Modal
-    </button> -->
-
   </div>
-
-  <!-- Modal -->
-  <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xm">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title fs-5" id="staticBackdropLabel">User Profile</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"(click)="closeModal()"></button>
-        </div>
-        <div class="modal-body">
-          <p>Profile details or other content.</p>
-        </div> 
-      </div>
-    </div>  
-  </div> -->
-
 
   <div style="margin-right: 20px;">
     <form class="d-flex" role="search" (submit)="searchRecipes()">
@@ -70,15 +51,18 @@
           <h5 class="card-title  placeholder-glow">{{data.title}}</h5>
           <p class="card-text">{{data.summary}}</p>
           <!-- <a class="btn btn-primary" (click)="readMore()">Read More</a> -->
-          <button type="button" class="btn custom-button3" (click)="readMore(data.id)">Read More>>></button>
-        </div>
+          <div class="button-container">
+            <button type="button" class="btn custom-button3" (click)="readMore(data.id)">Read More >>></button>
+            <button type="button" class="btn custom-button3" (click)="editRecipe(data.id)">
+              <i class="bi bi-pencil"></i>
+            </button>
+          </div>
+          
       </div>
     </div>
   </div>
 </div>
 
-<div class="loader">
-  <div *ngIf="loader" class="spinner-border" role="status">
-    <span class="sr-only">Loading...</span>
-  </div>
+<div *ngIf="isLoading" class="spinner">
+  <div class="spinner-border"></div>
 </div>

@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #bebebe55;
+  color: #fff;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: darkred;
+}
+
+.spinner {
+  position: fixed;
+  
+  width: 100%;
+  height: 100%;
+  background-color: #aaaaaa55;
+  color: #fff;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  color: darkred;
+}
+
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 6px;
+  z-index: 100;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  padding: 8px 20px;
+  background-color: rgb(231, 218, 186);
+  border: 2px solid #8b0000;
+  color: #8b0000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #8b0000;
+  color: #fff;
+  transform: translateY(-2px);
+}
+

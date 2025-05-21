@@ -1,5 +1,5 @@
 <div class="container" *ngIf="selectedRecipe">
-    <button class="btn back-button" (click)="goToHome()">Back</button>
+    <button class="back-button" (click)="goToHome()">Back</button>
     
     <div class="card"> 
       <h1 class="recipe-title">{{selectedRecipe.title}}</h1>
@@ -89,8 +89,7 @@
     </div>
   </div>
 
-  <div class="loader">
-    <div *ngIf="loader" class="spinner-border" role="status">
-      <span class="sr-only">Loading...</span>
+  <div *ngIf="isLoading" class="spinner">
+    <div class="spinner-border" role="status">
     </div>
-  </div>
+</div>

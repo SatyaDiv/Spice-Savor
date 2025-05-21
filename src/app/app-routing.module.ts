@@ -11,31 +11,52 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 
   {
-    path: 'login', loadChildren:() => import('./core/auth/login/login.module').then (m=> m.LoginModule) 
+    path: 'login',
+    loadChildren: () =>
+      import('./core/auth/login/login.module').then((m) => m.LoginModule),
   },
 
   {
-    path: 'signup', loadChildren:() => import('./core/auth/signup/signup.module').then (m => m.SignupModule)
+    path: 'signup',
+    loadChildren: () =>
+      import('./core/auth/signup/signup.module').then((m) => m.SignupModule),
   },
 
   {
-    path: 'home', loadChildren:() => import('./core/navbar/navbar.module').then (m => m.NavbarModule) ,canActivate:[AuthGuard]
+    path: 'home',
+    loadChildren: () =>
+      import('./core/navbar/navbar.module').then((m) => m.NavbarModule),
+    canActivate: [AuthGuard],
   },
 
   {
-    path: 'home/add-recipes', loadChildren:() => import('./core/recipes/add-recipes/add-recipes.module').then (m => m.AddRecipesModule),canActivate:[AuthGuard]
+    path: 'home/add-recipes',
+    loadChildren: () =>
+      import('./core/recipes/add-recipes/add-recipes.module').then(
+        (m) => m.AddRecipesModule
+      ),
+    canActivate: [AuthGuard],
   },
 
   {
-    path: 'recipes-search/:id', loadChildren:() => import('./core/recipes/recipes-search/recipes-search.module').then (m =>m.RecipesSearchModule), canActivate:[AuthGuard]
-  }
-  
+    path: 'recipes-detail/:id',
+    loadChildren: () =>
+      import('./core/recipes/recipes-search/recipes-search.module').then(
+        (m) => m.RecipesSearchModule
+      ),
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'recipe-edit/:id',
+    loadChildren: () =>
+      import('./core/recipes/edit-recipes/edit-recipes.module').then(
+        (m) => m.EditRecipesModule
+      ),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
-
-
+export class AppRoutingModule {}
